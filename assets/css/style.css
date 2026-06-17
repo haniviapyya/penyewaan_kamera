@@ -1,45 +1,167 @@
-.card:hover{
-    transform: translateY(-4px);
-    transition: 0.3s;
-}
-
-.menu-card{
-    cursor: pointer;
-}
-
-.dashboard-card{
-    border: none;
-    border-radius: 12px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-}
-
-.card-number{
-    font-size: 32px;
-    font-weight: bold;
-    color: #2c3e50;
-}
-
-.card-title{
-    color: #7f8c8d;
-}
-
 body{
-    background:#f8f9fa;
+    background:#F0F3FA;
 }
+
+/* CARD */
 
 .card{
     border:none;
-    border-radius:12px;
+    border-radius:18px;
+    box-shadow:0 4px 12px rgba(57,88,134,0.12);
+    transition:0.3s;
 }
+
+.card:hover{
+    transform:translateY(-4px);
+}
+
+/* HERO BANNER */
+
+.hero-banner{
+    background:linear-gradient(
+        135deg,
+        #628ECB,
+        #395886
+    );
+    color:white;
+    padding:60px;
+    border-radius:25px;
+    text-align:center;
+    margin-bottom:40px;
+}
+
+.hero-banner h1{
+    color:white;
+    font-weight:700;
+    margin-bottom:15px;
+}
+
+.hero-banner p{
+    color:#F0F3FA;
+    font-size:18px;
+    margin-bottom:25px;
+}
+
+/* NAVBAR */
+
+.navbar{
+    background:#395886 !important;
+}
+
+.navbar-brand,
+.navbar .nav-link{
+    color:white !important;
+}
+
+.navbar .nav-link:hover{
+    color:#D5DEEF !important;
+}
+
+/* BUTTON */
+
+.btn-primary{
+    background:#628ECB;
+    border:none;
+}
+
+.btn-primary:hover{
+    background:#395886;
+}
+
+.btn-light{
+    border-radius:12px;
+    padding:10px 25px;
+}
+
+/* JUDUL */
+
+h2,
+h3,
+h5{
+    color:#395886;
+    font-weight:600;
+}
+
+.text-muted{
+    color:#6c7a92 !important;
+}
+
+/* CARD HEADER */
+
+.card-header{
+    background:#D5DEEF;
+    color:#395886;
+    font-weight:bold;
+    border-bottom:none;
+}
+
+/* KATEGORI */
+
+.kategori-card{
+    background:white;
+    border:none;
+    border-radius:18px;
+    overflow:hidden;
+    height:100%;
+}
+
+.kategori-card:hover{
+    transform:translateY(-8px);
+}
+
+.kategori-card img{
+    height:250px;
+    width:100%;
+    object-fit:contain;
+}
+
+/* TABEL */
 
 .table{
     margin-bottom:0;
 }
 
-.btn{
-    border-radius:8px;
+.table thead{
+    background:#D5DEEF;
+    color:#395886;
 }
 
-.card:hover{
-    transition:0.3s;
+/* DASHBOARD STATISTIK */
+
+.statistik-1{
+    border-left:5px solid #395886;
+}
+
+.statistik-2{
+    border-left:5px solid #628ECB;
+}
+
+.statistik-3{
+    border-left:5px solid #8AAEE0;
+}
+
+.statistik-1 h2{
+    color:#395886;
+}
+
+.statistik-2 h2{
+    color:#628ECB;
+}
+
+.statistik-3 h2{
+    color:#8AAEE0;
+}
+
+.card-img-top{
+    height:220px;
+    object-fit:contain;
+    padding:15px;
+}
+
+.btn{
+    border-radius:12px;
+}
+
+.card-body h5{
+    min-height:48px;
 }
