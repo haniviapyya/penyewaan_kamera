@@ -37,10 +37,12 @@ mysqli_num_rows(mysqli_query($conn,"SELECT * FROM penyewaan"));
 
 <h2 class="mb-4">Dashboard</h2>
 
-<button id="darkModeBtn"
-        class="btn btn-dark mb-3">
-    🌙 Dark Mode
-</button>
+<div class="d-flex">
+    <button id="darkModeBtn"
+            class="btn btn-outline-light btn-sm">
+        🌙 Dark Mode
+    </button>
+</div>
 
 <div class="alert alert-primary">
     🕒 Jam Sekarang:
