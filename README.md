@@ -131,6 +131,41 @@ Database menggunakan tabel:
 
 ---
 
+## Screenshot Aplikasi
+
+### Dashboard
+![Dashboard](screenshots/beranda1.png)
+
+![Dashboard](screenshots/beranda2.png)
+
+![Dashboard](screenshots/beranda3.png)
+
+![Dashboard](screenshots/beranda4.png)
+
+![Dashboard](screenshots/beranda5.png)
+
+### Data Kamera
+![Kamera](screenshots/daftarkamera.png)
+
+### Edit Kamera
+![Edit](screenshots/editkamera.png)
+
+### Tambah Kamera
+![Tambah](screenshots/tambahkamera.png)
+
+### Tampilan Mobile
+![Mobile](screenshots/mobile1.png)
+
+![Mobile](screenshots/mobile2.png)
+
+---
+
+## Video Demo
+
+https://drive.google.com/drive/folders/1BKmb96QhCLmTP5tfyuWVe2jZJA2sSTG8?usp=sharing
+
+---
+
 ## Author
 
 Nama : Khadillaika Hanivia
