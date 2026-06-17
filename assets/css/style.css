@@ -165,3 +165,23 @@ h5{
 .card-body h5{
     min-height:48px;
 }
+
+.dark-mode{
+    background:#1e1e1e;
+    color:white;
+}
+
+.dark-mode .card{
+    background:#2c2c2c;
+    color:white;
+}
+
+.dark-mode h2,
+.dark-mode h3,
+.dark-mode h5{
+    color:white;
+}
+
+.dark-mode .text-muted{
+    color:#d0d0d0 !important;
+}

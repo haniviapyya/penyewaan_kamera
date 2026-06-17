@@ -3,9 +3,9 @@
 include "../includes/config.php";
 include "../includes/header.php";
 
-if(isset($_POST['simpan'])){
+if (isset($_POST['simpan'])) {
 
-    mysqli_query($conn,"
+    mysqli_query($conn, "
     INSERT INTO kamera
     (
         id_kategori,
@@ -35,120 +35,99 @@ $kategori = mysqli_query(
 
 <div class="card shadow-sm">
 
-<div class="card-header">
-    <h4 class="mb-0">📷 Tambah Kamera</h4>
-</div>
+    <div class="card-header">
+        <h4 class="mb-0">📷 Tambah Kamera</h4>
+    </div>
 
-<div class="card-body">
+    <div class="card-body">
 
-    <form method="post">
+        <form method="post" id="formKamera">
 
-        <div class="mb-3">
+            <div class="mb-3">
 
-            <label class="form-label">
-                Kategori Kamera
-            </label>
+                <label class="form-label">
+                    Kategori Kamera
+                </label>
 
-            <select
-                name="id_kategori"
-                class="form-select">
+                <select name="id_kategori" class="form-select">
 
-                <?php while($k=mysqli_fetch_assoc($kategori)){ ?>
+                    <?php while ($k = mysqli_fetch_assoc($kategori)) { ?>
 
-                <option value="<?= $k['id_kategori']; ?>">
-                    <?= $k['nama_kategori']; ?>
-                </option>
+                        <option value="<?= $k['id_kategori']; ?>">
+                            <?= $k['nama_kategori']; ?>
+                        </option>
 
-                <?php } ?>
+                    <?php } ?>
 
-            </select>
+                </select>
 
-        </div>
+            </div>
 
-        <div class="mb-3">
+            <div class="mb-3">
 
-            <label class="form-label">
-                Nama Kamera
-            </label>
+                <label class="form-label">
+                    Nama Kamera
+                </label>
 
-            <input
-                type="text"
-                name="nama_kamera"
-                class="form-control"
-                required>
+                <input type="text" name="nama_kamera" id="nama_kamera" class="form-control" required>
 
-        </div>
+            </div>
 
-        <div class="mb-3">
+            <div class="mb-3">
 
-            <label class="form-label">
-                Harga Sewa
-            </label>
+                <label class="form-label">
+                    Harga Sewa
+                </label>
 
-            <input
-                type="number"
-                name="harga_sewa"
-                class="form-control"
-                required>
+                <input type="number" name="harga_sewa" id="harga_sewa" class="form-control" required>
 
-        </div>
+            </div>
 
-        <div class="mb-3">
+            <div class="mb-3">
 
-            <label class="form-label">
-                Stok
-            </label>
+                <label class="form-label">
+                    Stok
+                </label>
 
-            <input
-                type="number"
-                name="stok"
-                class="form-control"
-                required>
+                <input type="number" name="stok" id="stok" class="form-control" required>
 
-        </div>
+            </div>
 
-        <div class="mb-3">
+            <div class="mb-3">
 
-            <label class="form-label">
-                Status
-            </label>
+                <label class="form-label">
+                    Status
+                </label>
 
-            <select
-                name="status"
-                class="form-select">
+                <select name="status" class="form-select">
 
-                <option value="Tersedia">
-                    Tersedia
-                </option>
+                    <option value="Tersedia">
+                        Tersedia
+                    </option>
 
-                <option value="Tidak Tersedia">
-                    Tidak Tersedia
-                </option>
+                    <option value="Tidak Tersedia">
+                        Tidak Tersedia
+                    </option>
 
-            </select>
+                </select>
 
-        </div>
+            </div>
 
-        <button
-            type="submit"
-            name="simpan"
-            class="btn btn-success">
+            <button type="submit" name="simpan" class="btn btn-success">
 
-            Simpan
+                Simpan
 
-        </button>
+            </button>
 
-        <a
-            href="kamera.php"
-            class="btn btn-secondary">
+            <a href="kamera.php" class="btn btn-secondary">
 
-            Kembali
+                Kembali
 
-        </a>
+            </a>
 
-    </form>
+        </form>
 
-</div>
+    </div>
 
 </div>
 
