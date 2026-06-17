@@ -2,7 +2,7 @@
 include "../includes/config.php";
 include "../includes/header.php";
 
-$data = mysqli_query($conn,"
+$data = mysqli_query($conn, "
 SELECT k.*, kk.nama_kategori
 FROM kamera k
 JOIN kategori_kamera kk
@@ -13,126 +13,126 @@ ON k.id_kategori = kk.id_kategori
 <div class="card shadow-sm mb-4">
     <div class="card-body">
 
-    <div class="d-flex justify-content-between align-items-center">
+        <div class="d-flex justify-content-between align-items-center">
 
-        <div>
-            <h3 class="mb-0">📷 Data Kamera</h3>
-            <small class="text-muted">
-                Kelola data kamera
-            </small>
+            <div>
+                <h3 class="mb-0">📷 Data Kamera</h3>
+                <small class="text-muted">
+                    Kelola data kamera
+                </small>
+            </div>
+
+            <a href="kamera_tambah.php" class="btn btn-primary">
+                + Tambah Kamera
+            </a>
+
+
         </div>
 
-        <a href="kamera_tambah.php" class="btn btn-primary">
-            + Tambah Kamera
-        </a>
-        
-
     </div>
-
-</div>
 
 </div>
 
 
 <div class="card shadow-sm">
 
-<div class="card-body">
+    <div class="card-body">
 
-    <div class="table-responsive">
+        <div class="mb-3">
+            <input type="text" id="searchKamera" class="form-control"
+                placeholder="🔍 Cari kamera berdasarkan nama, kategori, atau status...">
+        </div>
 
-        <table class="table table-hover align-middle">
+        <div class="table-responsive">
 
-            <thead class="table-dark">
+            <table class="table table-hover align-middle" id="tabelKamera">
 
-                <tr>
-                    <th>ID</th>
-                    <th>Kategori</th>
-                    <th>Nama Kamera</th>
-                    <th>Harga Sewa</th>
-                    <th>Stok</th>
-                    <th>Status</th>
-                    <th>Aksi</th>
-                </tr>
+                <thead class="table-dark">
 
-            </thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Kategori</th>
+                        <th>Nama Kamera</th>
+                        <th>Harga Sewa</th>
+                        <th>Stok</th>
+                        <th>Status</th>
+                        <th>Aksi</th>
+                    </tr>
 
-            <tbody>
+                </thead>
 
-            <?php while($row=mysqli_fetch_assoc($data)){ ?>
+                <tbody>
 
-            <tr>
+                    <?php while ($row = mysqli_fetch_assoc($data)) { ?>
 
-                <td><?= $row['id_kamera']; ?></td>
+                        <tr>
 
-                <td><?= $row['nama_kategori']; ?></td>
+                            <td><?= $row['id_kamera']; ?></td>
 
-                <td><?= $row['nama_kamera']; ?></td>
+                            <td><?= $row['nama_kategori']; ?></td>
 
-                <td>
-                    Rp <?= number_format($row['harga_sewa']); ?>
-                </td>
+                            <td><?= $row['nama_kamera']; ?></td>
 
-                <td><?= $row['stok']; ?></td>
+                            <td>
+                                Rp <?= number_format($row['harga_sewa']); ?>
+                            </td>
 
-                <td>
+                            <td><?= $row['stok']; ?></td>
 
-                    <?php if($row['status'] == 'Tersedia'){ ?>
+                            <td>
 
-                        <span class="badge bg-success">
-                            Tersedia
-                        </span>
+                                <?php if ($row['status'] == 'Tersedia') { ?>
 
-                    <?php } else { ?>
+                                    <span class="badge bg-success">
+                                        Tersedia
+                                    </span>
 
-                        <span class="badge bg-danger">
-                            Tidak Tersedia
-                        </span>
+                                <?php } else { ?>
+
+                                    <span class="badge bg-danger">
+                                        Tidak Tersedia
+                                    </span>
+
+                                <?php } ?>
+
+                            </td>
+
+                            <td class="text-nowrap">
+
+                                <a href="kamera_edit.php?id=<?= $row['id_kamera']; ?>" class="btn btn-warning btn-sm">
+
+                                    Edit
+
+                                </a>
+
+                                <a href="kamera_hapus.php?id=<?= $row['id_kamera']; ?>" class="btn btn-danger btn-sm"
+                                    onclick="return confirm('Yakin hapus data?')">
+
+                                    Hapus
+
+                                </a>
+
+                            </td>
+
+                        </tr>
 
                     <?php } ?>
 
-                </td>
+                </tbody>
 
-                <td class="text-nowrap">
+            </table>
 
-                    <a
-                        href="kamera_edit.php?id=<?= $row['id_kamera']; ?>"
-                        class="btn btn-warning btn-sm">
-
-                        Edit
-
-                    </a>
-
-                    <a
-                        href="kamera_hapus.php?id=<?= $row['id_kamera']; ?>"
-                        class="btn btn-danger btn-sm"
-                        onclick="return confirm('Yakin hapus data?')">
-
-                        Hapus
-
-                    </a>
-
-                </td>
-
-            </tr>
-
-            <?php } ?>
-
-            </tbody>
-
-        </table>
+        </div>
 
     </div>
 
 </div>
 
-</div>
-
 
 <div class="mt-4">
-    <a href="../index.php"
-       class="btn btn-secondary">
+    <a href="../index.php" class="btn btn-secondary">
 
-       ← Kembali
+        ← Kembali
 
     </a>
 </div>

@@ -37,6 +37,11 @@ mysqli_num_rows(mysqli_query($conn,"SELECT * FROM penyewaan"));
 
 <h2 class="mb-4">Dashboard</h2>
 
+<div class="alert alert-primary">
+    🕒 Jam Sekarang:
+    <span id="jam"></span>
+</div>
+
 <div class="row mb-5">
 
     <div class="col-md-4 mb-3">
