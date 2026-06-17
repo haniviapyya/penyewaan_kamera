@@ -1,3 +1,16 @@
+<?php
+
+session_start();
+
+if (!isset($_SESSION['login'])) {
+
+    header("Location: /penyewaan_kamera/pages/login.php");
+    exit;
+
+}
+
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -62,6 +75,13 @@ Penyewaan
 <a class="nav-link" href="/penyewaan_kamera/pages/pembayaran.php">
 Pembayaran
 </a>
+</li>
+
+<li class="nav-item">
+    <a class="nav-link text-warning"
+       href="/penyewaan_kamera/pages/logout.php">
+       Logout
+    </a>
 </li>
 
 </ul>

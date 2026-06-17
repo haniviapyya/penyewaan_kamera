@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Jun 14, 2026 at 02:41 PM
+-- Generation Time: Jun 17, 2026 at 12:52 PM
 -- Server version: 8.4.3
 -- PHP Version: 8.3.30
 
@@ -34,6 +34,25 @@ CREATE DEFINER=`root`@`localhost` FUNCTION `hitung_total_biaya` (`harga` DECIMAL
 END$$
 
 DELIMITER ;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `admin`
+--
+
+CREATE TABLE `admin` (
+  `id_admin` int NOT NULL,
+  `username` varchar(50) COLLATE utf8mb4_general_ci NOT NULL,
+  `password` varchar(255) COLLATE utf8mb4_general_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `admin`
+--
+
+INSERT INTO `admin` (`id_admin`, `username`, `password`) VALUES
+(1, 'admin', 'admin123');
 
 -- --------------------------------------------------------
 
@@ -92,8 +111,8 @@ CREATE TABLE `kamera` (
 --
 
 INSERT INTO `kamera` (`id_kamera`, `id_kategori`, `nama_kamera`, `harga_sewa`, `stok`, `status`) VALUES
-(1, 1, 'Canon EOS 80D', 150000.00, 3, 'Tersedia'),
-(2, 1, 'Nikon D7500', 170000.00, 2, 'Tersedia'),
+(1, 1, 'Canon EOS 80D', 120000.00, 3, 'Tersedia'),
+(2, 1, 'Nikon D7500', 170000.00, 1, 'Tersedia'),
 (3, 2, 'Sony A6400', 200000.00, 2, 'Tersedia'),
 (4, 2, 'Fujifilm X-T30', 180000.00, 4, 'Tersedia'),
 (5, 3, 'GoPro Hero 12', 100000.00, 5, 'Tersedia');
@@ -155,7 +174,8 @@ INSERT INTO `pelanggan` (`id_pelanggan`, `nama`, `alamat`, `no_hp`, `email`) VAL
 (5, 'Budi Santoso', 'Bandung', '081234567891', 'budi@gmail.com'),
 (6, 'Citra Lestari', 'Yogyakarta', '081234567892', 'citra@gmail.com'),
 (7, 'Dewi Anggraini', 'Surabaya', '081234567893', 'dewi@gmail.com'),
-(8, 'Eko Saputra', 'Semarang', '081234567894', 'eko@gmail.com');
+(8, 'Eko Saputra', 'Semarang', '081234567894', 'eko@gmail.com'),
+(10, 'Andy Park', 'Ajibarang Kulon RT 02 RW 01, Ajibarang Kulon', '088980705251', 'andypark@gmail.com');
 
 -- --------------------------------------------------------
 
@@ -217,9 +237,9 @@ INSERT INTO `penyewaan` (`id_sewa`, `id_pelanggan`, `tanggal_sewa`, `tanggal_kem
 CREATE TABLE `view_data_penyewaan` (
 `nama` varchar(100)
 ,`nama_kamera` varchar(100)
-,`subtotal` decimal(10,2)
-,`tanggal_kembali` date
 ,`tanggal_sewa` date
+,`tanggal_kembali` date
+,`subtotal` decimal(10,2)
 );
 
 -- --------------------------------------------------------
@@ -236,6 +256,12 @@ CREATE TABLE `view_laporan_pendapatan` (
 --
 -- Indexes for dumped tables
 --
+
+--
+-- Indexes for table `admin`
+--
+ALTER TABLE `admin`
+  ADD PRIMARY KEY (`id_admin`);
 
 --
 -- Indexes for table `detail_penyewaan`
@@ -283,6 +309,12 @@ ALTER TABLE `penyewaan`
 --
 
 --
+-- AUTO_INCREMENT for table `admin`
+--
+ALTER TABLE `admin`
+  MODIFY `id_admin` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
 -- AUTO_INCREMENT for table `detail_penyewaan`
 --
 ALTER TABLE `detail_penyewaan`
@@ -304,7 +336,7 @@ ALTER TABLE `kategori_kamera`
 -- AUTO_INCREMENT for table `pelanggan`
 --
 ALTER TABLE `pelanggan`
-  MODIFY `id_pelanggan` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id_pelanggan` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `pembayaran`
